@@ -8,6 +8,7 @@ import ArticleQueueItem from 'Components/Articles/ArticleQueueItem';
 const StyledArticle = styled.article`
 `;
 const StyledTitle = styled.h2`
+    margin: 0 0 1rem;
     font-size: 24pt;
 `
 
@@ -30,6 +31,7 @@ export class ArticleList extends PureComponent {
         return (
             <StyledArticle>
                 <StyledTitle>{this.renderTitle(this.props.title)}</StyledTitle>
+                <div dangerouslySetInnerHTML={{__html: this.props.content ? this.props.content.rendered : null}} />
             </StyledArticle>
         );
     }

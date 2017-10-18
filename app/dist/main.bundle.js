@@ -22537,7 +22537,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n    font-family: \'Arial\';\n    display: flex;\n    flex-direction: column;\n'], ['\n    font-family: \'Arial\';\n    display: flex;\n    flex-direction: column;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    font-family: \'Arial\';\n    display: flex;\n    flex-direction: column;\n'], ['\n    font-family: \'Arial\';\n    display: flex;\n    flex-direction: column;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    padding: 1rem;\n    display: flex;\n    @media(max-width: 800px) {\n        flex-direction: column-reverse;\n    }\n'], ['\n    padding: 1rem;\n    display: flex;\n    @media(max-width: 800px) {\n        flex-direction: column-reverse;\n    }\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n    flex: 4;\n'], ['\n    flex: 4;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n    margin-left: 1rem;\n    min-width: 20rem;\n    background: #2C4770;\n    @media(max-width: 800px) {\n        margin: 0 0 1rem 0;\n    }\n'], ['\n    margin-left: 1rem;\n    min-width: 20rem;\n    background: #2C4770;\n    @media(max-width: 800px) {\n        margin: 0 0 1rem 0;\n    }\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n    padding: 1rem;\n    background-color: #4D658D;\n    color: white;\n    margin: 1rem;\n'], ['\n    padding: 1rem;\n    background-color: #4D658D;\n    color: white;\n    margin: 1rem;\n']);
 
 var _react = __webpack_require__(1);
 
@@ -22572,6 +22576,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var AppStyled = _styledComponents2.default.section(_templateObject);
+var StyledBody = _styledComponents2.default.div(_templateObject2);
+
+var Main = _styledComponents2.default.div(_templateObject3);
+
+var Sidebar = _styledComponents2.default.div(_templateObject4);
+var SidebarItem = _styledComponents2.default.div(_templateObject5);
 
 var App = function (_PureComponent) {
     _inherits(App, _PureComponent);
@@ -22590,25 +22600,52 @@ var App = function (_PureComponent) {
                 null,
                 _react2.default.createElement(_Header2.default, null),
                 _react2.default.createElement(
-                    _reactRouter.Switch,
+                    StyledBody,
                     null,
-                    _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _ArticleList2.default }),
-                    _react2.default.createElement(_reactRouter.Route, {
-                        path: '/posts/:id/:slug',
-                        render: function render(_ref) {
-                            var id = _ref.match.params.id;
+                    _react2.default.createElement(
+                        Main,
+                        null,
+                        _react2.default.createElement(
+                            _reactRouter.Switch,
+                            null,
+                            _react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _ArticleList2.default }),
+                            _react2.default.createElement(_reactRouter.Route, {
+                                path: '/posts/:id/:slug',
+                                render: function render(_ref) {
+                                    var id = _ref.match.params.id;
 
-                            return _react2.default.createElement(_ArticleList2.default, { categoryId: id });
-                        }
-                    }),
-                    _react2.default.createElement(_reactRouter.Route, {
-                        path: '/post/:id/:slug',
-                        render: function render(_ref2) {
-                            var id = _ref2.match.params.id;
+                                    return _react2.default.createElement(_ArticleList2.default, { categoryId: id });
+                                }
+                            }),
+                            _react2.default.createElement(_reactRouter.Route, {
+                                path: '/post/:id/:slug',
+                                render: function render(_ref2) {
+                                    var id = _ref2.match.params.id;
 
-                            return _react2.default.createElement(_Article2.default, { id: id });
-                        }
-                    })
+                                    return _react2.default.createElement(_Article2.default, { id: id });
+                                }
+                            })
+                        )
+                    ),
+                    _react2.default.createElement(
+                        Sidebar,
+                        null,
+                        _react2.default.createElement(
+                            SidebarItem,
+                            null,
+                            'sidebar content one'
+                        ),
+                        _react2.default.createElement(
+                            SidebarItem,
+                            null,
+                            'sidebar content two'
+                        ),
+                        _react2.default.createElement(
+                            SidebarItem,
+                            null,
+                            'sidebar content three'
+                        )
+                    )
                 )
             );
         }
@@ -27474,7 +27511,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n'], ['\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    font-size: 24pt;\n'], ['\n    font-size: 24pt;\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n    margin: 0 0 1rem;\n    font-size: 24pt;\n'], ['\n    margin: 0 0 1rem;\n    font-size: 24pt;\n']);
 
 var _react = __webpack_require__(1);
 
@@ -27546,7 +27583,8 @@ var ArticleList = exports.ArticleList = function (_PureComponent) {
                     StyledTitle,
                     null,
                     this.renderTitle(this.props.title)
-                )
+                ),
+                _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: this.props.content ? this.props.content.rendered : null } })
             );
         }
     }]);
